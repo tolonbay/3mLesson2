@@ -25,5 +25,9 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         tvValue = view.findViewById(R.id.tv_value);
+        if (getArguments()!= null){
+            String value = getArguments().getString(FirstFragment.KEY_FOR_BUNDLE);
+            tvValue.setText(value);
+        }
     }
 }
